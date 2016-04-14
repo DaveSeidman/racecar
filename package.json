@@ -1,0 +1,22 @@
+{
+  "name": "racecar",
+  "version": "0.0.0",
+  "description": "control an rc car via rpa",
+  "main": "index.js",
+  "dependencies": {
+    "gpio": "^0.2.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DaveSeidman/racecar.git"
+  },
+  "author": "dave seidman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaveSeidman/racecar/issues"
+  }
+}
