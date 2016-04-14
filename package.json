@@ -4,7 +4,8 @@
   "description": "control an rc car via rpa",
   "main": "index.js",
   "dependencies": {
-    "gpio": "^0.2.7"
+    "gpio": "^0.2.7",
+    "wiring-pi": "^2.1.1"
   },
   "devDependencies": {},
   "scripts": {
