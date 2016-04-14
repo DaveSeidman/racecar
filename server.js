@@ -7,9 +7,9 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var gpio = require("gpio");
 
-var gpio10, gpio9, gpio11, gpio25, gpio8, gpio7;
-var gpios = [gpio10,gpio9,gpio11,gpio25,gpio8,gpio7];
-var indexes = [10,9,11,25,8,7];
+var      gpio13,gpio19,gpio26,gpio16,gpio20,gpio21,
+gpios = [gpio13,gpio19,gpio26,gpio16,gpio20,gpio21],
+indexes =   [13,    19,    26,    16,    20,    21];
 
 setupServer();
 setupSocket();
