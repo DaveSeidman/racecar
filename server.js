@@ -45,7 +45,7 @@ function setupSocket() {
                     gpios[2].set(1);
                     break;
 
-                case 'bkwd':
+                case 'back':
                     console.log('backward');
                     gpios[1].set(1);
                     gpios[2].set(0);
