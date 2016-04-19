@@ -20,9 +20,6 @@ function setupServer() {
 
     console.log("server running on port 8888");
     server.listen(8888);
-    /*app.get('/', function (req, res) {
-      res.sendFile(__dirname + req.url);
-    });*/
     app.use(express.static('html'));
 
 }
@@ -51,33 +48,41 @@ function setupSocket() {
                     gpios[2].set(0);
                     break;
 
-                case 'stop':
-                    console.log('stop');
-                    gpios[1].set(0);
-                    gpios[2].set(0);
-                    break;
-
-                case 'left':
+                case 'rght':
                     console.log('left');
                     gpios[4].set(0);
                     gpios[5].set(1);
                     break;
 
-                case 'rght':
+                case 'left':
                     console.log('right');
                     gpios[4].set(1);
-                    gpios[5].set(0);
-                    break;
-
-                case 'strt':
-                    console.log('center');
-                    gpios[4].set(0);
                     gpios[5].set(0);
                     break;
 
             }
 
         });
+
+        socket.on("btnreleased", function(data) {
+
+            switch(data) {
+
+                case 'frwd':
+                case 'back':
+                    console.log('stop');
+                    gpios[1].set(0);
+                    gpios[2].set(0);
+                    break;
+
+                case 'rght':
+                case 'left':
+                    console.log('center');
+                    gpios[4].set(0);
+                    gpios[5].set(0);
+                    break;
+            }
+        })
 
     });
 }

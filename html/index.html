@@ -1,23 +1,25 @@
 <!doctype HTML>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Racecar Controller</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/vendor/socket.io.js"></script>
     <script src="js/main.js"></script>
 </head>
 <body>
-    Control the car.
+    <h1>Control the car.</h1>
+    <iframe id="cam" src="http://192.168.108.15:9000"></iframe>
+
     <div class="wrap" id="wrap">
         <div class="controls speed">
             <button id="frwd">Forward</button>
-            <button id="stop">Stop</button>
+            <!-- <button id="stop">Stop</button> -->
             <button id="back">Backward</button>
         </div>
         <div class="controls direction">
             <button id="left">Go Left</button>
-            <button id="strt">Go Stright</button>
+            <!-- <button id="strt">Go Stright</button> -->
             <button id="rght">Go Right</button>
         </div>
     </div>

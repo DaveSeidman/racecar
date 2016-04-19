@@ -4,7 +4,25 @@ html,body {
     padding:0;
     margin:0;
 }
+* {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none;   /* Chrome/Safari/Opera */
+      -khtml-user-select: none;    /* Konqueror */
+      -moz-user-select: none;      /* Firefox */
+      -ms-user-select: none;       /* Internet Explorer/Edge */
+      user-select: none;
+}
 
+h1 {
+    text-align: center;
+
+}
+iframe {
+    width:100%;
+    border:0;
+    height:480px;
+
+}
 .wrap {
     width:100%;
     white-space: nowrap;
