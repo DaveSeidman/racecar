@@ -38,26 +38,30 @@ function setupSocket() {
 
                 case 'frwd':
                     console.log('forward');
-                    gpios[1].set(0);
-                    gpios[2].set(1);
+                    gpios[1].set(1);
+                    gpios[2].set(0);
+                    socket.emit('echo', 'going forward');
                     break;
 
                 case 'back':
                     console.log('backward');
-                    gpios[1].set(1);
-                    gpios[2].set(0);
+                    gpios[1].set(0);
+                    gpios[2].set(1);
+                    socket.emit('echo', 'going backward');
                     break;
 
                 case 'rght':
                     console.log('left');
                     gpios[4].set(0);
                     gpios[5].set(1);
+                    socket.emit('echo', 'going left');
                     break;
 
                 case 'left':
                     console.log('right');
                     gpios[4].set(1);
                     gpios[5].set(0);
+                    socket.emit('echo', 'going right');
                     break;
 
             }
@@ -73,6 +77,7 @@ function setupSocket() {
                     console.log('stop');
                     gpios[1].set(0);
                     gpios[2].set(0);
+                    socket.emit('echo', 'stopping');
                     break;
 
                 case 'rght':
@@ -80,6 +85,7 @@ function setupSocket() {
                     console.log('center');
                     gpios[4].set(0);
                     gpios[5].set(0);
+                    socket.emit('echo', 'centering');
                     break;
             }
         })
