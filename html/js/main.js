@@ -1,6 +1,12 @@
 'use strict';
 
-var socket = io.connect('192.168.108.15:8888', { transports: ['websocket'] });
+
+var isLocal = (window.location.href.indexOf('192.168') > 0);
+
+var motorAddress = isLocal ? '192.168.108.15:8888' : '108.54.246.220:8888';
+var camAddress = isLocal ? 'http://192.168.108.15:8890/' : 'http://108.54.246.220:8890/';
+
+var socket = io.connect(motorAddress, { transports: ['websocket'] });
 socket.on('echo', function(data) {
 
     console.log(data);
@@ -14,18 +20,24 @@ var iframe;
 document.addEventListener("DOMContentLoaded", function() {
 
     iframe = document.getElementById('cam');
-    iframe.style.height = (window.innerWidth * 48 / 64) + "px";
+    iframe.src = camAddress;
+    iframe.src = iframe.src;
+    //iframe.contentWindow.location.reload(true);
+    iframe.style.height = (window.innerWidth * 48 / 64) + "px"; // this may get called too soon
 
     buttons = document.getElementById('wrap').querySelectorAll('button');
     for(var btn in buttons) {
 
-        if(isMobile()) {
-            buttons[btn].addEventListener('touchstart', onPress);
-            buttons[btn].addEventListener('touchend', onRelease);
-        }
-        else {
-            buttons[btn].addEventListener('mousedown', onPress);
-            buttons[btn].addEventListener('mouseup', onRelease);
+        if(btn < buttons.length) {
+
+            if(isMobile()) {
+                buttons[btn].addEventListener('touchstart', onPress);
+                buttons[btn].addEventListener('touchend', onRelease);
+            }
+            else {
+                buttons[btn].addEventListener('mousedown', onPress);
+                buttons[btn].addEventListener('mouseup', onRelease);
+            }
         }
     }
 

@@ -54,14 +54,14 @@ function setupSocket() {
                     console.log('left');
                     gpios[4].set(0);
                     gpios[5].set(1);
-                    socket.emit('echo', 'going left');
+                    socket.emit('echo', 'going right');
                     break;
 
                 case 'left':
                     console.log('right');
                     gpios[4].set(1);
                     gpios[5].set(0);
-                    socket.emit('echo', 'going right');
+                    socket.emit('echo', 'going left');
                     break;
 
             }
