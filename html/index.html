@@ -8,20 +8,23 @@
     <script src="js/main.js"></script>
 </head>
 <body>
-    <h1>Control the car.</h1>
-    <iframe id="cam" src="http://108.54.246.220:8890/"></iframe>
-
     <div class="wrap" id="wrap">
+        <h1>Control the car</h1>
+        <p>Use the buttons below or Arrow Keys on your keyboard</p>
+        <iframe id="cam" src="http://108.54.246.220:8890/"></iframe>
+
+
         <div class="controls speed">
             <button id="frwd">Forward</button>
-            <!-- <button id="stop">Stop</button> -->
             <button id="back">Backward</button>
         </div>
         <div class="controls direction">
-            <button id="left">Go Left</button>
-            <!-- <button id="strt">Go Stright</button> -->
-            <button id="rght">Go Right</button>
+            <button id="left">← Left &nbsp;&nbsp;&nbsp;&nbsp;</button>
+            <button id="rght">&nbsp;&nbsp;&nbsp;&nbsp; Right →</button>
         </div>
+
+        <img src="images/car.jpg">
+
     </div>
 </body>
 </html>
